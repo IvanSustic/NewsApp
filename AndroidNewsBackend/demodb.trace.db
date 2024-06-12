@@ -1,0 +1,705 @@
+2024-06-11 19:46:34.050112+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]USERS"; expected "UPDATE"; SQL statement:
+USERS [42001-224]
+2024-06-11 19:54:38.505665+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "NASLOV" not found; SQL statement:
+insert into Category(naslov) values("News") [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:759)
+	at org.h2.command.Parser.parseColumn(Parser.java:1190)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1175)
+	at org.h2.command.Parser.parseInsert(Parser.java:1549)
+	at org.h2.command.Parser.parsePrepared(Parser.java:719)
+	at org.h2.command.Parser.parse(Parser.java:592)
+	at org.h2.command.Parser.parse(Parser.java:564)
+	at org.h2.command.Parser.prepareCommand(Parser.java:483)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1345)
+	at org.h2.server.web.WebApp.query(WebApp.java:1143)
+	at org.h2.server.web.WebApp.query(WebApp.java:1119)
+	at org.h2.server.web.WebApp.process(WebApp.java:245)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:177)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.example.androidnewsbackend.fiter.CustomFilter.doFilter(CustomFilter.java:19)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.example.androidnewsbackend.fiter.TransactionFilter.doFilter(TransactionFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.example.androidnewsbackend.fiter.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-06-11 19:54:51.167256+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "News" not found; SQL statement:
+insert into Category(naziv) values("News") [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.command.dml.Insert.doPrepare(Insert.java:300)
+	at org.h2.command.dml.DataChangeStatement.prepare(DataChangeStatement.java:37)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1345)
+	at org.h2.server.web.WebApp.query(WebApp.java:1143)
+	at org.h2.server.web.WebApp.query(WebApp.java:1119)
+	at org.h2.server.web.WebApp.process(WebApp.java:245)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:177)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.example.androidnewsbackend.fiter.CustomFilter.doFilter(CustomFilter.java:19)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.example.androidnewsbackend.fiter.TransactionFilter.doFilter(TransactionFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.example.androidnewsbackend.fiter.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-06-11 20:00:45.206546+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "DATUM" not found; SQL statement:
+insert into Roles(datum, naslov,slika,tekst) values('2024-04-21 00:00:00','Ahmetović o izborima u SDP-u','https://img.24sata.hr/_VpBaMif5hi-hA12mcSjqoRRtrM=/622x350/smart/media/images/2024-24/pxl-280524-115276490.jpg','Peđa Grbin u ponedjeljak je nakon europskih izbora potvrdio da se neće kandidirati na sljedećim unutarstranačkim izborima za dužnosti u stranci. Najavio je da će mandat odraditi do kraja, osigurati poštene izbore i da stranku ostavlja u boljem stanju.') [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:759)
+	at org.h2.command.Parser.parseColumn(Parser.java:1190)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1175)
+	at org.h2.command.Parser.parseInsert(Parser.java:1549)
+	at org.h2.command.Parser.parsePrepared(Parser.java:719)
+	at org.h2.command.Parser.parse(Parser.java:592)
+	at org.h2.command.Parser.parse(Parser.java:564)
+	at org.h2.command.Parser.prepareCommand(Parser.java:483)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1345)
+	at org.h2.server.web.WebApp.query(WebApp.java:1143)
+	at org.h2.server.web.WebApp.query(WebApp.java:1119)
+	at org.h2.server.web.WebApp.process(WebApp.java:245)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:177)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.example.androidnewsbackend.fiter.CustomFilter.doFilter(CustomFilter.java:19)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.example.androidnewsbackend.fiter.TransactionFilter.doFilter(TransactionFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.example.androidnewsbackend.fiter.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-06-11 20:04:56.815060+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into News(datum, naslov,slika,tekst,category_id) values('2024-04-21 00:00:00','Vida: Nadam se da će Gvardiol prestići Luku!','https://img.24sata.hr/ad-Bg27LQRc_y-6FDXxykHp49aY=/622x350/smart/media/images/2024-24/images-2024-24-pxl-110624-115991759.jpg',Kako doživljavate ovo sve što ste doživjeli u Neuruppinu?\000d\000a\000d\000a- Naravno da smo ponosni što je toliko navijača i naših ljudi došlo u grad i na trening, ali prošle godine u Ligi nacija se moglo naslutiti što nas ovdje čeka. Samo bih se zahvalio svima što su došli, dali nam toliko ljubavi, poštovanja i energije, jako dobro - rekao je Domagoj Vida, a Livaković se nadovezao:\000d\000a\000d\000a- Stvarno smo počašćeni, što Domagoj kaže, dalo se naslutiti, još je i u Beču bilo nešto slično. Dat ćemo sve od sebe i počašćeni smo svime.[*]',2);"; SQL statement:
+insert into News(datum, naslov,slika,tekst,category_id) values('2024-04-21 00:00:00','Vida: Nadam se da će Gvardiol prestići Luku!','https://img.24sata.hr/ad-Bg27LQRc_y-6FDXxykHp49aY=/622x350/smart/media/images/2024-24/images-2024-24-pxl-110624-115991759.jpg',Kako doživljavate ovo sve što ste doživjeli u Neuruppinu?
+
+- Naravno da smo ponosni što je toliko navijača i naših ljudi došlo u grad i na trening, ali prošle godine u Ligi nacija se moglo naslutiti što nas ovdje čeka. Samo bih se zahvalio svima što su došli, dali nam toliko ljubavi, poštovanja i energije, jako dobro - rekao je Domagoj Vida, a Livaković se nadovezao:
+
+- Stvarno smo počašćeni, što Domagoj kaže, dalo se naslutiti, još je i u Beču bilo nešto slično. Dat ćemo sve od sebe i počašćeni smo svime.',2); [42000-224]
+2024-06-11 20:05:35.438703+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into News(datum, naslov,slika,tekst,category_id) values('2024-04-21 00:00:00','Vida: Nadam se da će Gvardiol prestići Luku!','https://img.24sata.hr/ad-Bg27LQRc_y-6FDXxykHp49aY=/622x350/smart/media/images/2024-24/images-2024-24-pxl-110624-115991759.jpg','Oko šest tisuća navijača na dočeku na trgu u Neuruppinu pa onda i još više na otvorenom treningu u ponedjeljak poslijepodne. Zlatko Dalić stalno ponavlja kako reprezentaciji treba mir, što su najmanje imali prethodnih dana u Njemačkoj, ali sada kada su odradili sve obaveze, '[*]vatreni' se mogu u tišini posvetiti pripremi utakmice protiv Španjolske',2)"; expected "[, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+insert into News(datum, naslov,slika,tekst,category_id) values('2024-04-21 00:00:00','Vida: Nadam se da će Gvardiol prestići Luku!','https://img.24sata.hr/ad-Bg27LQRc_y-6FDXxykHp49aY=/622x350/smart/media/images/2024-24/images-2024-24-pxl-110624-115991759.jpg','Oko šest tisuća navijača na dočeku na trgu u Neuruppinu pa onda i još više na otvorenom treningu u ponedjeljak poslijepodne. Zlatko Dalić stalno ponavlja kako reprezentaciji treba mir, što su najmanje imali prethodnih dana u Njemačkoj, ali sada kada su odradili sve obaveze, 'vatreni' se mogu u tišini posvetiti pripremi utakmice protiv Španjolske',2) [42001-224]
+2024-06-11 20:06:05.570821+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into News(datum, naslov,slika,tekst,category_id) values('2024-04-21 00:00:00','Vida: Nadam se da će Gvardiol prestići Luku!','https://img.24sata.hr/ad-Bg27LQRc_y-6FDXxykHp49aY=/622x350/smart/media/images/2024-24/images-2024-24-pxl-110624-115991759.jpg','Oko šest tisuća navijača na dočeku na trgu u Neuruppinu pa onda i još više na otvorenom treningu u ponedjeljak poslijepodne. Zlatko Dalić stalno ponavlja kako reprezentaciji treba mir, što su najmanje imali prethodnih dana u Njemačkoj, ali sada kada su odradili sve obaveze, '[*]vatreni' se mogu u tišini posvetiti pripremi utakmice protiv Španjolske',2)"; expected "[, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+insert into News(datum, naslov,slika,tekst,category_id) values('2024-04-21 00:00:00','Vida: Nadam se da će Gvardiol prestići Luku!','https://img.24sata.hr/ad-Bg27LQRc_y-6FDXxykHp49aY=/622x350/smart/media/images/2024-24/images-2024-24-pxl-110624-115991759.jpg','Oko šest tisuća navijača na dočeku na trgu u Neuruppinu pa onda i još više na otvorenom treningu u ponedjeljak poslijepodne. Zlatko Dalić stalno ponavlja kako reprezentaciji treba mir, što su najmanje imali prethodnih dana u Njemačkoj, ali sada kada su odradili sve obaveze, 'vatreni' se mogu u tišini posvetiti pripremi utakmice protiv Španjolske',2) [42001-224]
+2024-06-11 20:06:24.039489+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+insert into News(datum, naslov,slika,tekst,category_id) values('2024-04-21 00:00:00','Vida: Nadam se da će Gvardiol prestići Luku!','https://img.24sata.hr/ad-Bg27LQRc_y-6FDXxykHp49aY=/622x350/smart/media/images/2024-24/images-2024-24-pxl-110624-115991759.jpg','Oko šest tisuća navijača na dočeku na trgu u Neuruppinu pa onda i još više na otvorenom treningu u ponedjeljak poslijepodne. Zlatko Dalić stalno ponavlja kako reprezentaciji treba mir, što su najmanje imali prethodnih dana u Njemačkoj, ali sada kada su odradili sve obaveze, vatreni se mogu u tišini posvetiti pripremi utakmice protiv Španjolske',2) [22001-224]
+2024-06-11 20:16:14.713429+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into News(datum, naslov,slika,tekst,category_id) values('2024-04-21 00:00:00','Darko Domijan snimio pjesmu za vatrene',https[*]://img.24sata.hr/2sttWuNszGdms_3JktS6HS1pBA8=/622x350/smart/media/images/2024-24/27b118d7-a8af-4a0a-88d2-3799132ee78d.jpg','Darko Domijan ususret Europskom prvenstvu u nogometu snimio je navijačku pjesmu po nazivom 'Igrajte sinovi Hrvatske'. Pjesma je na YouTubeu objavljena prije sedam dana, a skupila je više od 14.000 pregleda. Ako je suditi prema komentarima, pjesma među navijačima nije izazvala oduševljenje.',3)"; expected "(, ., [, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+insert into News(datum, naslov,slika,tekst,category_id) values('2024-04-21 00:00:00','Darko Domijan snimio pjesmu za vatrene',https://img.24sata.hr/2sttWuNszGdms_3JktS6HS1pBA8=/622x350/smart/media/images/2024-24/27b118d7-a8af-4a0a-88d2-3799132ee78d.jpg','Darko Domijan ususret Europskom prvenstvu u nogometu snimio je navijačku pjesmu po nazivom 'Igrajte sinovi Hrvatske'. Pjesma je na YouTubeu objavljena prije sedam dana, a skupila je više od 14.000 pregleda. Ako je suditi prema komentarima, pjesma među navijačima nije izazvala oduševljenje.',3) [42001-224]
+2024-06-11 20:16:29.685602+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into News(datum, naslov,slika,tekst,category_id) values('2024-04-21 00:00:00','Darko Domijan snimio pjesmu za vatrene',https[*]://img.24sata.hr/2sttWuNszGdms_3JktS6HS1pBA8=/622x350/smart/media/images/2024-24/27b118d7-a8af-4a0a-88d2-3799132ee78d.jpg','Darko Domijan ususret Europskom prvenstvu u nogometu snimio je navijačku pjesmu po nazivom Igrajte sinovi Hrvatske. Pjesma je na YouTubeu objavljena prije sedam dana, a skupila je više od 14.000 pregleda. Ako je suditi prema komentarima, pjesma među navijačima nije izazvala oduševljenje.',3)"; expected "(, ., [, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+insert into News(datum, naslov,slika,tekst,category_id) values('2024-04-21 00:00:00','Darko Domijan snimio pjesmu za vatrene',https://img.24sata.hr/2sttWuNszGdms_3JktS6HS1pBA8=/622x350/smart/media/images/2024-24/27b118d7-a8af-4a0a-88d2-3799132ee78d.jpg','Darko Domijan ususret Europskom prvenstvu u nogometu snimio je navijačku pjesmu po nazivom Igrajte sinovi Hrvatske. Pjesma je na YouTubeu objavljena prije sedam dana, a skupila je više od 14.000 pregleda. Ako je suditi prema komentarima, pjesma među navijačima nije izazvala oduševljenje.',3) [42001-224]
+2024-06-11 20:17:39.492587+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into News(datum, naslov,slika,tekst,category_id) values('2024-04-21 00:00:00','Darko Domijan snimio pjesmu za vatrene',https[*]://img.24sata.hr/2sttWuNszGdms_3JktS6HS1pBA8=/622x350/smart/media/images/2024-24/27b118d7-a8af-4a0a-88d2-3799132ee78d.jpg','Darko Domijan ususret Europskom prvenstvu u nogometu snimio je navijačku pjesmu po nazivom Igrajte sinovi Hrvatske. Pjesma je na YouTubeu objavljena prije sedam dana, a skupila je više od 14.000 pregleda. Ako je suditi prema komentarima, pjesma među navijačima nije izazvala oduševljenje.',3)"; expected "(, ., [, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+insert into News(datum, naslov,slika,tekst,category_id) values('2024-04-21 00:00:00','Darko Domijan snimio pjesmu za vatrene',https://img.24sata.hr/2sttWuNszGdms_3JktS6HS1pBA8=/622x350/smart/media/images/2024-24/27b118d7-a8af-4a0a-88d2-3799132ee78d.jpg','Darko Domijan ususret Europskom prvenstvu u nogometu snimio je navijačku pjesmu po nazivom Igrajte sinovi Hrvatske. Pjesma je na YouTubeu objavljena prije sedam dana, a skupila je više od 14.000 pregleda. Ako je suditi prema komentarima, pjesma među navijačima nije izazvala oduševljenje.',3) [42001-224]
+2024-06-11 20:20:07.113550+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into News(datum, naslov,slika,tekst,category_id) values('2024-04-21 00:00:00','Volvo Cars seli proizvodnju električnih vozila u Belgiju','https://img.24sata.hr/eFJH43Wc48iSpHh7eyPC2q4wzFI=/622x350/smart/media/images/2024-24/pxl-dpa-020524-113911060_ujsmeZ7.jpg',Švedski Volvo Cars počeo je seliti proizvodnju električnih vozila iz Kine u Belgiju, procijenivši da će EU uvesti carine na uvoz, piše londonski The Times. Volvo je u vlasništvu kineskog Geelyja i proizvodi električna vozila u Kini. Budući da je Europska komisija otvorila istragu o mogućim subvencijama koja bi mogla rezultirati carinama, kompanija je počela razmišljati o obustavi prodaje u Europi, izvijestio je londonski list, pozivajući se na izvore u tvrtki.[*]',4)"; SQL statement:
+insert into News(datum, naslov,slika,tekst,category_id) values('2024-04-21 00:00:00','Volvo Cars seli proizvodnju električnih vozila u Belgiju','https://img.24sata.hr/eFJH43Wc48iSpHh7eyPC2q4wzFI=/622x350/smart/media/images/2024-24/pxl-dpa-020524-113911060_ujsmeZ7.jpg',Švedski Volvo Cars počeo je seliti proizvodnju električnih vozila iz Kine u Belgiju, procijenivši da će EU uvesti carine na uvoz, piše londonski The Times. Volvo je u vlasništvu kineskog Geelyja i proizvodi električna vozila u Kini. Budući da je Europska komisija otvorila istragu o mogućim subvencijama koja bi mogla rezultirati carinama, kompanija je počela razmišljati o obustavi prodaje u Europi, izvijestio je londonski list, pozivajući se na izvore u tvrtki.',4) [42000-224]
+2024-06-11 20:20:36.796922+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-11 20:59:25.776128+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-11 21:21:48.920296+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-11 21:26:37.656275+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-11 21:27:30.491363+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-11 21:31:16.308986+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-11 21:34:38.026052+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-11 21:41:51.167292+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-11 21:45:51.025754+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-11 21:48:21.748602+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-11 21:57:21.425093+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-11 22:46:45.245762+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-11 22:48:50.752945+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-11 22:57:47.309232+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-11 23:03:40.418761+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-11 23:21:21.156201+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-11 23:25:09.950182+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-11 23:38:00.152797+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-11 23:44:27.968408+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 10:54:27.927830+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 10:55:40.249868+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 11:05:08.520884+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 11:07:39.595726+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 11:08:48.596923+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 11:10:24.885785+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 11:13:03.753413+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 11:18:44.457898+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 11:25:49.715891+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 11:31:40.374570+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 11:40:20.998993+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 11:49:19.553819+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 11:53:26.510625+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 11:57:26.511759+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 12:07:56.653707+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 13:28:15.354113+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 13:28:50.323888+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 13:38:54.334469+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 13:41:46.717189+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 13:43:23.810889+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 13:45:56.538445+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 13:55:14.009629+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 13:59:27.695964+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 13:59:43.241015+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 14:06:05.362750+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 14:08:44.859901+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 14:10:29.737280+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 14:21:13.669827+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 14:26:43.201714+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 14:29:31.766961+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 14:41:27.006611+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 14:43:29.516073+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 14:46:46.615014+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 14:50:39.399031+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 14:55:04.893206+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 14:57:27.496621+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "cae60f88-5e50-4646-9b9e-1c08ff2220e3\0009" not found; SQL statement:
+SELECT * FROM REFRESH_TOKEN where token = "cae60f88-5e50-4646-9b9e-1c08ff2220e3	" [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:148)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:148)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1177)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1345)
+	at org.h2.server.web.WebApp.query(WebApp.java:1143)
+	at org.h2.server.web.WebApp.query(WebApp.java:1119)
+	at org.h2.server.web.WebApp.process(WebApp.java:245)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:177)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.example.androidnewsbackend.fiter.CustomFilter.doFilter(CustomFilter.java:19)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.example.androidnewsbackend.fiter.TransactionFilter.doFilter(TransactionFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.example.androidnewsbackend.fiter.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-06-12 14:59:14.456852+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 15:02:06.634602+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 15:04:11.289461+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 15:09:02.226387+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 15:11:54.310432+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 15:17:38.447022+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 15:23:28.550799+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 15:28:09.328870+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 15:39:14.890563+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 15:41:58.811188+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 15:54:13.569832+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 15:56:58.180730+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 16:01:14.510844+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
+2024-06-12 16:01:46.202362+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TEKST CHARACTER VARYING(255)": "U&'Oko \\0161est tisu\\0107a navija\\010da na do\\010deku na trgu u Neuruppinu pa on... (345)"; SQL statement:
+INSERT INTO "PUBLIC"."NEWS_COPY_3_0"("ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID") OVERRIDING SYSTEM VALUE SELECT "ID", "DATUM", "NASLOV", "SLIKA", "TEKST", "CATEGORY_ID" FROM "PUBLIC"."NEWS" [22001-224]
